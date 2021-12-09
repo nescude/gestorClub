@@ -29,6 +29,7 @@ public class SeatController {
          return service.findByIsBusy();
     }
 
+
     @PutMapping("/claim/{idSeat}")
     public Boolean claimSeat(
         @PathVariable String idSeat {
@@ -36,10 +37,16 @@ public class SeatController {
         }
     )
 
+    @PutMapping("/claim/{idSeat}")
+    public Boolean claimSeat(
+        @PathVariable String idSeat) {
+        // return service.claimSeat(idSeat)
+
     @PutMapping("/updateSeat")
     public Boolean updateSeatStatus(
             @PathVariable String idSeat) {
-         return service.updateSeatStatus(idSeat);
+        // return service.updateSeatStatus(idSeat)
+
     }
 
 }
