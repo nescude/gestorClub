@@ -21,18 +21,18 @@ public class SeatController {
     @GetMapping("/status")
     public Boolean isBusy(
             @PathVariable String idSeat) {
-        // return service.isBusy(idSeat);
+         return service.isBusy(idSeat);
     }
 
     @GetMapping("/avaliableSeats")
     public Iterable<Seat> getAllAvaliableSeats() {
-        // return service.getAllAvaliableSeats()
+         return service.findByIsBusy();
     }
 
     @PutMapping("/updateSeat")
     public Boolean updateSeatStatus(
             @PathVariable String idSeat) {
-        // return service.updateSeatStatus(idSeat)
+         return service.updateSeatStatus(idSeat);
     }
 
 }

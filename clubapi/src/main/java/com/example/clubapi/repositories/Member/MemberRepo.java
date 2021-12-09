@@ -21,4 +21,14 @@ public List<Member> getAllActiveMembers(){
 public Iterable<Member> getAllMembers(){
     return memberRepo.findAll();
 }
+
+public Member save(Member member){
+    return memberRepo.save(member);
+}
+
+public Boolean deleteById(String dni){
+    memberRepo.delete(memberRepo.findById(dni).orElse(null));
+    return true;
+
+}
 }

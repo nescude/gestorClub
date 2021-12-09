@@ -12,5 +12,6 @@ import lombok.NoArgsConstructor;
 public class Seat {
     private String idSeat;
     private Boolean type;
-    private Boolean isBusy;    
+    private Boolean isBusy;   
+    private String dniMember; 
 }
