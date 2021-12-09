@@ -8,6 +8,7 @@ public class ClubapiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClubapiApplication.class, args);
+		System.out.println("Hola");
 	}
 
 }
