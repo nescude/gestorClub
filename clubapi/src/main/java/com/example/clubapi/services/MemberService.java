@@ -1,4 +1,4 @@
-package com.example.clubapi.Services;
+package com.example.clubapi.services;
 
 import com.example.clubapi.mock_interfaces.MockMember;
 import com.example.clubapi.mock_interfaces.MockSeat;
