@@ -1,7 +1,9 @@
 package com.example.clubapi.controllers;
 
+import com.example.clubapi.Services.SeatService;
 import com.example.clubapi.models.Seat;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,13 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/seats")
 public class SeatController {
 
-    // @Autowired
-    // private SeatService service
-
+    @Autowired
+    private SeatService service;
 
     @GetMapping("/status")
     public Boolean isBusy(
-        @PathVariable String idSeat) {
+            @PathVariable String idSeat) {
         // return service.isBusy(idSeat);
     }
 
@@ -28,10 +29,17 @@ public class SeatController {
         // return service.getAllAvaliableSeats()
     }
 
+<<<<<<< HEAD
     @PutMapping("/claim/{idSeat}")
     public Boolean claimSeat(
         @PathVariable String idSeat) {
         // return service.claimSeat(idSeat)
+=======
+    @PutMapping("/updateSeat")
+    public Boolean updateSeatStatus(
+            @PathVariable String idSeat) {
+        // return service.updateSeatStatus(idSeat)
+>>>>>>> 760fc3c89679ab04d4ef9890738950e38a1f09b4
     }
 
 }
