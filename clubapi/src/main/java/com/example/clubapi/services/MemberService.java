@@ -1,9 +1,10 @@
-package com.example.clubapi.services;
+package com.example.clubapi.Services;
 
 import com.example.clubapi.mock_interfaces.MockMember;
 import com.example.clubapi.mock_interfaces.MockSeat;
 import com.example.clubapi.models.Member;
 import com.example.clubapi.models.Seat;
+import com.example.clubapi.repositories.Member.MemberRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class MemberService {
     
     @Autowired
-    MockMember repo;
+    MemberRepo repo;
 
     @Autowired
     MockSeat service;
