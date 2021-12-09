@@ -28,10 +28,10 @@ public class SeatController {
         // return service.getAllAvaliableSeats()
     }
 
-    @PutMapping("/updateSeat")
-    public Boolean updateSeatStatus(
+    @PutMapping("/claim/{idSeat}")
+    public Boolean claimSeat(
         @PathVariable String idSeat) {
-        // return service.updateSeatStatus(idSeat)
+        // return service.claimSeat(idSeat)
     }
 
 }
