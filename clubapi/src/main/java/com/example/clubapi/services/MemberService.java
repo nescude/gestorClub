@@ -1,8 +1,7 @@
-package com.example.clubapi.services;
+package com.example.clubapi.Services;
 
-import com.example.clubapi.mock_interfaces.MockMember;
 import com.example.clubapi.models.Member;
-
+import com.example.clubapi.repositories.Member.MemberRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +9,14 @@ import org.springframework.stereotype.Service;
 public class MemberService {
     
     @Autowired
-    MockMember repo;
+    MemberRepo repo;
 
     public Iterable<Member> getAllMembers(){
-        return repo.findAll();
+        return repo.getAllMembers();
     }
 
-    public Member getByDni(Long dni){
-        return repo.findById(dni).orElse(null);
+    public Member getByDni(String dni){
+        return repo.findById(dni);
     }
 
     public Boolean postMember(Member member){

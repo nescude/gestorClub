@@ -21,25 +21,32 @@ public class SeatController {
     @GetMapping("/status")
     public Boolean isBusy(
             @PathVariable String idSeat) {
-        // return service.isBusy(idSeat);
+         return service.isBusy(idSeat);
     }
 
     @GetMapping("/avaliableSeats")
     public Iterable<Seat> getAllAvaliableSeats() {
-        // return service.getAllAvaliableSeats()
+         return service.findByIsBusy();
     }
 
-<<<<<<< HEAD
+
+    @PutMapping("/claim/{idSeat}")
+    public Boolean claimSeat(
+        @PathVariable String idSeat {
+            //return service.claimSeat(idSeat);
+        }
+    )
+
     @PutMapping("/claim/{idSeat}")
     public Boolean claimSeat(
         @PathVariable String idSeat) {
         // return service.claimSeat(idSeat)
-=======
+
     @PutMapping("/updateSeat")
     public Boolean updateSeatStatus(
             @PathVariable String idSeat) {
         // return service.updateSeatStatus(idSeat)
->>>>>>> 760fc3c89679ab04d4ef9890738950e38a1f09b4
+
     }
 
 }

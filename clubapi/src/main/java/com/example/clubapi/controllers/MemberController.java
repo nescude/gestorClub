@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.clubapi.models.Member;
 
+import com.example.clubapi.Services.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,28 +19,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberController {
     
     @Autowired
-    private MemberService service;
+
+     private MemberService service;
 
     @GetMapping("/{dni}")
     public Member getByDni(
-        @PathVariable String dni) {
-        return service.getById(dni);
+        @PathVariable String dni){
+        return service.getByDni(dni);
+
     }
 
     @GetMapping("/members")
     public Iterable<Member> getAllMembers() {
-        // return service.getAllMembers();
+         return service.getAllMembers();
     }
 
     @PostMapping("/new")
-    public Boolean postMember(
-        @RequestBody Member member) {
-        //return service.postMember(member)
+
+    public Boolean postMember(Member member) {
+        return service.postMember(member);
     }
 
-    @DeleteMapping("/delete/{dni}")
-    public Boolean deleteMember(
-        @PathVariable String dni) {
-        // return service.deleteMember(dni)
+    @DeleteMapping("/delete")
+    public Boolean deleteMember(String dni) {
+        return service.deleteById(dni);
+
     }
 }
